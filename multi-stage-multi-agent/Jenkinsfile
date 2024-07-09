@@ -6,7 +6,9 @@ pipeline {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
+        echo 'Back End Is Started '
         sh 'mvn --version'
+        echo 'Back End Is Completed '
       }
     }
     stage('Front-end') {
@@ -14,8 +16,10 @@ pipeline {
         docker { image 'node:17-alpine' }
       }
       steps {
+        echo 'Front End is Started'
         sh 'node --version'
         sh 'npm install'    // Added this line to install npm packages by testing purpose by Pratik
+        echo 'Front End Is Completed '
       }
     }
   }
