@@ -18,10 +18,6 @@ pipeline {
       steps {
         echo 'Starting Front-end stage...'
         sh 'node --version'
-        echo 'Listing files before npm install...'
-        sh 'ls -la'
-        echo 'Running npm install...'
-        sh 'npm install'
         echo 'Listing files after npm install...'
         sh 'ls -la'
         echo 'Front-end stage completed.'
