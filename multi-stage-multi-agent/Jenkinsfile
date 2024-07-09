@@ -11,15 +11,16 @@ pipeline {
         echo 'Back End Is Completed '
       }
     }
-    stage('Front-end') {
-      agent {
-        docker { image 'node:17-alpine' }
-      }
-      steps {
-        echo 'Front End is Started'
+    steps {
+        echo 'Starting Front-end stage...'
         sh 'node --version'
-        sh 'npm install'    // Added this line to install npm packages by testing purpose by Pratik
-        echo 'Front End Is Completed '
+        echo 'Listing files before npm install...'
+        sh 'ls -la'
+        echo 'Running npm install...'
+        sh 'npm install'
+        echo 'Listing files after npm install...'
+        sh 'ls -la'
+        echo 'Front-end stage completed.'
       }
     }
   }
